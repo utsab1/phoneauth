@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">220931784105-ibmeh400lgk6mn039uqdbqlu60pla2ie.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">220931784105</string>
+    <string name="google_api_key" translatable="false">AIzaSyBKb93nJSWK0H0mhws5bbkZh0bfBs-6w4s</string>
+    <string name="google_app_id" translatable="false">1:220931784105:android:701f72460170c5b4fad8b8</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBKb93nJSWK0H0mhws5bbkZh0bfBs-6w4s</string>
+    <string name="google_storage_bucket" translatable="false">audiocall-35ebc.appspot.com</string>
+    <string name="project_id" translatable="false">audiocall-35ebc</string>
+</resources>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "220931784105",
+    "project_id": "audiocall-35ebc",
+    "storage_bucket": "audiocall-35ebc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:220931784105:android:701f72460170c5b4fad8b8",
+        "android_client_info": {
+          "package_name": "com.example.clubhouse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "220931784105-gojtcjlnk5lf57ejv6olufehvpdjlg4v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.clubhouse",
+            "certificate_hash": "4f2812b502357658d6d45b3aefeaa426d0bddada"
+          }
+        },
+        {
+          "client_id": "220931784105-ibmeh400lgk6mn039uqdbqlu60pla2ie.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKb93nJSWK0H0mhws5bbkZh0bfBs-6w4s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "220931784105-ibmeh400lgk6mn039uqdbqlu60pla2ie.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
