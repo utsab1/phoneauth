@@ -1,8 +1,9 @@
-import 'package:clubhouse/utils/router.dart';
-import 'package:clubhouse/services/authenticate.dart';
-import 'package:clubhouse/utils/app_color.dart';
+import 'package:PhoneAuth/services/authenticate.dart';
+import 'package:PhoneAuth/utils/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import 'utils/router.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Clubhouse',
+      title: 'phoneauth',
       debugShowCheckedModeBanner: false,
       onGenerateRoute: router,
       theme: ThemeData(

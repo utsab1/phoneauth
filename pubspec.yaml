@@ -1,4 +1,4 @@
-name: clubhouse
+name: PhoneAuth
 description: A new Flutter project.
 
 publish_to: "none"
@@ -13,13 +13,13 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.0
-  agora_rtc_engine: ^4.2.0
-  permission_handler: ^8.3.0
   firebase_auth:
   firebase_core: ^0.4.4
   cloud_firestore: ^0.12.9
   country_code_picker: ^2.0.2
   pull_to_refresh: ^2.0.0
+  sms_autofill: ^2.2.0
+  google_fonts: ^1.1.2
   
 dev_dependencies:
   flutter_test:
@@ -28,5 +28,5 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-  assets:
-    - assets/images/
+  # assets:
+    # - assets/images/

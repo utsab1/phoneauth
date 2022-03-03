@@ -1,4 +1,4 @@
-package com.example.clubhouse
+package com.example.phoneauth
 
 import io.flutter.embedding.android.FlutterActivity
 

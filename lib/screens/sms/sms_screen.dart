@@ -1,7 +1,9 @@
-import 'package:clubhouse/services/authenticate.dart';
-import 'package:clubhouse/utils/app_color.dart';
-import 'package:clubhouse/widgets/rounded_button.dart';
+import 'package:PhoneAuth/services/authenticate.dart';
+import 'package:PhoneAuth/utils/app_color.dart';
+import 'package:PhoneAuth/widgets/rounded_button.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:sms_autofill/sms_autofill.dart';
 
 /// The screen for input verification code
 /// Made up of three main components: title, form, bottom part
@@ -16,6 +18,31 @@ class SmsScreen extends StatefulWidget {
 
 class _SmsScreenState extends State<SmsScreen> {
   final _smsController = TextEditingController();
+  void fetchOtp() {
+    print('setState fetchOtp');
+  }
+
+  @override
+  void initState() {
+    // print('This is verification id ${widget.verificationId}');
+    _listenOTP();
+    fetchOtp();
+    super.initState();
+  }
+
+  void _listenOTP() async {
+    await SmsAutoFill().listenForCode;
+  }
+
+  validateOtp(String otp) {
+    print('Code received $otp');
+  }
+
+  @override
+  void dispose() {
+    SmsAutoFill().unregisterListener();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,12 +65,20 @@ class _SmsScreenState extends State<SmsScreen> {
   }
 
   Widget title() {
-    return Padding(
-      padding: const EdgeInsets.only(left: 80.0, right: 80.0),
-      child: Text(
-        'Enter the code we just texted you',
-        style: TextStyle(fontSize: 25),
-        textAlign: TextAlign.center,
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 40.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Enter the code ',
+            style: TextStyle(fontSize: 25),
+          ),
+          Text(
+            'Please enter the code sent to +61 63487 23342 to continue.',
+            style: TextStyle(fontSize: 16, color: Color(0xff899386)),
+          ),
+        ],
       ),
     );
   }
@@ -51,32 +86,49 @@ class _SmsScreenState extends State<SmsScreen> {
   Widget form() {
     return Column(
       children: [
-        Container(
-          width: 330,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: Form(
-            child: TextFormField(
-              textAlign: TextAlign.center,
-              controller: _smsController,
-              autocorrect: false,
-              autofocus: false,
-              decoration: InputDecoration(
-                hintText: '••••',
-                hintStyle: TextStyle(
-                  fontSize: 20,
-                ),
-                border: InputBorder.none,
-              ),
-              keyboardType: TextInputType.number,
-              style: TextStyle(
-                  fontSize: 25,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w400),
-            ),
-          ),
+        // Container(
+        //   width: 330,
+        //   decoration: BoxDecoration(
+        //     color: Colors.white,
+        //     borderRadius: BorderRadius.circular(8),
+        //   ),
+        //   child: Form(
+        //     child: TextFormField(
+        //       textAlign: TextAlign.center,
+        //       controller: _smsController,
+        //       autocorrect: false,
+        //       autofocus: false,
+        //       decoration: InputDecoration(
+        //         hintText: '••••',
+        //         hintStyle: TextStyle(
+        //           fontSize: 20,
+        //         ),
+        //         border: InputBorder.none,
+        //       ),
+        //       keyboardType: TextInputType.number,
+        //       style: TextStyle(
+        //           fontSize: 25,
+        //           color: Colors.black,
+        //           fontWeight: FontWeight.w400),
+        //     ),
+        //   ),
+        // ),
+        PinFieldAutoFill(
+          keyboardType: TextInputType.number,
+          cursor: Cursor(color: Colors.black, enabled: true, width: 1),
+          autoFocus: true,
+          controller: _smsController,
+          codeLength: 6,
+          currentCode: "",
+          decoration: BoxLooseDecoration(
+              textStyle: TextStyle(color: Colors.black),
+              radius: Radius.circular(1),
+              strokeColorBuilder: FixedColorBuilder(Colors.black)),
+          onCodeChanged: (pin) {
+            if (pin.length == 6) {
+              // signInWithPhoneNumber(pin);
+            }
+          },
         ),
         SizedBox(height: 15.0),
         Text(

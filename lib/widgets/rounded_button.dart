@@ -47,7 +47,7 @@ class RoundedButton extends StatelessWidget {
           isCircle
               ? CircleBorder()
               : RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(10),
                 ),
         ),
         padding: MaterialStateProperty.all<EdgeInsets>(padding),

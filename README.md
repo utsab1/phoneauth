@@ -1,14 +1,14 @@
-# Clubhouse
+<!-- # phoneauth
 
-Clubhouse clone written in Flutter using Firebase/Firestore and Agora services.
+phoneauth clone written in Flutter using Firebase/Firestore and Agora services.
 
 ## See our tutorial posts:
 
-Part 1 - [Setup Flutter project and create Clubhouse clone app UI](https://perpet.io/blog/how-to-build-a-clubhouse-clone-app-with-flutter-a-tutorial-by-perpetio-part-i/)
+Part 1 - [Setup Flutter project and create phoneauth clone app UI](https://perpet.io/blog/how-to-build-a-phoneauth-clone-app-with-flutter-a-tutorial-by-perpetio-part-i/)
 
-Part 2 - [User login and registration with Firebase](https://perpet.io/blog/how-to-build-a-clubhouse-clone-app-with-flutter-a-tutorial-by-perpetio-part-ii/)
+Part 2 - [User login and registration with Firebase](https://perpet.io/blog/how-to-build-a-phoneauth-clone-app-with-flutter-a-tutorial-by-perpetio-part-ii/)
 
-Part 3 - [Voice calling functionality with Agora](https://perpet.io/blog/how-to-build-a-clubhouse-clone-app-with-flutter-a-tutorial-by-perpetio-part-iii/)
+Part 3 - [Voice calling functionality with Agora](https://perpet.io/blog/how-to-build-a-phoneauth-clone-app-with-flutter-a-tutorial-by-perpetio-part-iii/)
 
 
 ## Preview
@@ -40,7 +40,7 @@ Part 3 - [Voice calling functionality with Agora](https://perpet.io/blog/how-to-
 #### 2. Clone the repo.
 
 ```sh
-$ git clone https://github.com/perpetio/clubhouse.git
+$ git clone https://github.com/perpetio/phoneauth.git
 ```
 
 #### 3. Run `flutter pub get`.
@@ -76,4 +76,4 @@ $ git clone https://github.com/perpetio/clubhouse.git
 
  ```
 
-#### 6. Run the project using `flutter run` or using your IDE's tools.
+#### 6. Run the project using `flutter run` or using your IDE's tools. -->

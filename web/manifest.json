@@ -1,6 +1,6 @@
 {
-    "name": "clubhouse",
-    "short_name": "clubhouse",
+    "name": "phoneauth",
+    "short_name": "phoneauth",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -1,9 +1,7 @@
-import 'dart:developer';
-
-import 'package:clubhouse/utils/router.dart';
-import 'package:clubhouse/services/authenticate.dart';
-import 'package:clubhouse/utils/app_color.dart';
-import 'package:clubhouse/widgets/rounded_button.dart';
+import 'package:PhoneAuth/services/authenticate.dart';
+import 'package:PhoneAuth/utils/app_color.dart';
+import 'package:PhoneAuth/utils/router.dart';
+import 'package:PhoneAuth/widgets/rounded_button.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -67,6 +65,7 @@ class _PhoneScreenState extends State<PhoneScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(),
       body: Container(
         alignment: Alignment.center,
@@ -85,9 +84,12 @@ class _PhoneScreenState extends State<PhoneScreen> {
   }
 
   Widget title() {
-    return Text(
-      'Enter your phone #',
-      style: TextStyle(fontSize: 25),
+    return Container(
+      width: MediaQuery.of(context).size.width * 0.7,
+      child: Text(
+        'Let’s start with your number',
+        style: TextStyle(fontSize: 34),
+      ),
     );
   }
 
@@ -98,36 +100,50 @@ class _PhoneScreenState extends State<PhoneScreen> {
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
       ),
-      child: Row(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CountryCodePicker(
-            initialSelection: 'UA',
-            showCountryOnly: false,
-            alignLeft: false,
-            padding: const EdgeInsets.all(8),
-            textStyle: TextStyle(fontSize: 20),
-          ),
-          Expanded(
-            child: Form(
-              child: TextFormField(
-                controller: _phoneNumberController,
-                autocorrect: false,
-                autofocus: false,
-                decoration: InputDecoration(
-                  hintText: 'Phone Number',
-                  hintStyle: TextStyle(
-                    fontSize: 20,
-                  ),
-                  border: InputBorder.none,
-                ),
-                keyboardType: TextInputType.numberWithOptions(
-                    signed: true, decimal: true),
-                style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w400),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 10.0),
+            child: Text(
+              'Phone number',
+              style: TextStyle(
+                fontSize: 14,
               ),
             ),
+          ),
+          Row(
+            children: [
+              CountryCodePicker(
+                initialSelection: 'UA',
+                showCountryOnly: false,
+                alignLeft: false,
+                padding: const EdgeInsets.all(8),
+                textStyle: TextStyle(fontSize: 20),
+              ),
+              Expanded(
+                child: Form(
+                  child: TextFormField(
+                    controller: _phoneNumberController,
+                    autocorrect: false,
+                    autofocus: false,
+                    decoration: InputDecoration(
+                      hintText: 'Phone Number',
+                      hintStyle: TextStyle(
+                        fontSize: 20,
+                      ),
+                      border: InputBorder.none,
+                    ),
+                    keyboardType: TextInputType.numberWithOptions(
+                        signed: true, decimal: true),
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400),
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
@@ -138,13 +154,14 @@ class _PhoneScreenState extends State<PhoneScreen> {
     return Column(
       children: [
         Text(
-          'By entering your number, you\'re agreeing to out\nTerms or Services and Privacy Policy. Thanks!',
+          'Rest assured, we only need your number for account creating purposes.',
+          textAlign: TextAlign.center,
           style: TextStyle(color: Colors.grey),
         ),
         SizedBox(height: 30),
         RoundedButton(
-          color: AppColor.AccentBlue,
-          minimumWidth: 230,
+          color: Color(0xffDC734C),
+          minimumWidth: 330,
           disabledColor: AppColor.AccentBlue.withOpacity(0.3),
           onPressed: () {
             verifyPhone('+977${_phoneNumberController.text}');

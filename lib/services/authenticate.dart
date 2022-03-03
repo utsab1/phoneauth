@@ -1,6 +1,6 @@
-import 'package:clubhouse/screens/phone/phone_screen.dart';
-import 'package:clubhouse/utils/router.dart';
-import 'package:clubhouse/screens/home/home_screen.dart';
+import 'package:PhoneAuth/screens/homescreen/homescreen.dart';
+import 'package:PhoneAuth/screens/phone/phone_screen.dart';
+import 'package:PhoneAuth/utils/router.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
